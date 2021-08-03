@@ -17,7 +17,7 @@ namespace TextAdventureGame
         public int AttackStrength { get; set; }
         public int Armor { get; set; }
         public int Speed { get; set; } = 100;
-        public int AliensToKill { get; set; } = 4;
+        public int AliensToKill { get; set; } = 3;
         public int Ammo { get; set; }
         public int Grenades { get; set; } = 2;
 
@@ -56,15 +56,15 @@ namespace TextAdventureGame
 
         public void PulseRifle()
         {
-            AttackStrength = 100;
+            AttackStrength = 85;
             Speed -= 10;
             Ammo = 200;
         }
 
-        public void FlameThrower()
+        public void Shotgun()
         {
-            AttackStrength = 75;
-            Speed -= 30;
+            AttackStrength = 100;
+            Speed -= 20;
             Ammo = 100;
         }
 
@@ -79,6 +79,13 @@ namespace TextAdventureGame
             AttackStrength = 120;
             Speed -= 50;
             Ammo = 300;
+        }
+
+        public void FlameThrower()
+        {
+            AttackStrength = 75;
+            Speed -= 30;
+            Ammo = 100;
         }
     }
 }

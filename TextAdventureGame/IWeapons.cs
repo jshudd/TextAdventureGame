@@ -8,10 +8,12 @@ namespace TextAdventureGame
 
         public void PulseRifle();
 
-        public void FlameThrower();
+        public void Shotgun();
 
         public void Pistol();
 
         public void SmartGun();
+
+        public void FlameThrower();
     }
 }
