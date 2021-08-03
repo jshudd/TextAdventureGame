@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace TextAdventureGame
 {
     public class SpaceMarine : IWeapons, IArmor
@@ -20,6 +22,20 @@ namespace TextAdventureGame
         public int AliensToKill { get; set; } = 3;
         public int Ammo { get; set; }
         public int Grenades { get; set; } = 2;
+        public static List<string> WeaponList { get; set; } = new List<string>()
+        {
+            "Pulse Rifle",
+            "Shotgun",
+            "Pistol",
+            "Smartgun",
+            "Flamethrower"
+        };
+        public static List<string> ArmorList { get; set; } = new List<string>()
+        {
+            "Light Armor",
+            "Medium Armor",
+            "Heavy Armor"
+        };
 
         public int Attack()
         {

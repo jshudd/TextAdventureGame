@@ -5,8 +5,8 @@ namespace TextAdventureGame
     {
         public int Ammo { get; set; }
         public int Grenades { get; set; }
-
-        public void PulseRifle();
+        
+        public virtual void PulseRifle() { }
 
         public void Shotgun();
 
