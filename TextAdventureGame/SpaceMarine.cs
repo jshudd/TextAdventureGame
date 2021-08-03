@@ -1,7 +1,7 @@
 ﻿using System;
 namespace TextAdventureGame
 {
-    public class SpaceMarine
+    public class SpaceMarine : IWeapons, IArmor
     {
         public SpaceMarine()
         {
