@@ -10,5 +10,10 @@ namespace TextAdventureGame
 
         public abstract int Attack();
         public abstract void HealthDamage(int attackStrength);
+
+        public virtual void Death()
+        {
+            Console.WriteLine("The alien has been killed.");
+        }
     }
 }

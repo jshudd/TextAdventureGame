@@ -22,5 +22,10 @@ namespace TextAdventureGame
         {
             Health -= attackStrength;
         }
+
+        public override void Death()
+        {
+            Console.WriteLine("The FaceSucker has died.");
+        }
     }
 }

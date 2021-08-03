@@ -22,5 +22,10 @@ namespace TextAdventureGame
         {
             Health -= attackStrength;
         }
+
+        public override void Death()
+        {
+            Console.WriteLine("The Xenomorph has been killed. Don't get burned by the acidic blood!");
+        }
     }
 }
