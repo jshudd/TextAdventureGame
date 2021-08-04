@@ -28,10 +28,12 @@ namespace TextAdventureGame
             bool cont = false;
 
             Console.WriteLine("Run to the armory and gear up!!");
-            Console.WriteLine("Make sure you choose the right combination to ensure victory.");            
-            Console.WriteLine();
+            Console.WriteLine("Make sure you choose the right combination to ensure victory.");
+            Thread.Sleep(4000);
+            
             do
             {
+                Console.Clear();
                 Console.WriteLine("Choose your body armor.");
                 Console.WriteLine();
                 Console.WriteLine("Light: Some protection but won't slow you down.");
@@ -45,14 +47,18 @@ namespace TextAdventureGame
                 switch(response.ToLower())
                 {
                     case "light":
+                    case "l":
                         marine.LightArmor();
                         cont = true;
                         break;
                     case "medium":
+                    case "m":
+                    case "med":
                         marine.MedArmor();
                         cont = true;
                         break;
                     case "heavy":
+                    case "h":
                         marine.HeavyArmor();
                         cont = true;
                         break;
@@ -176,14 +182,15 @@ namespace TextAdventureGame
             if (marine.RanAway)
             {
                 Console.Clear();
-                Console.WriteLine($"We regret to inform you that {marine.Name} ran away but was too slow and was caught by the aliens.");
+                Console.WriteLine($"We regret to inform you that {marine.Name} ran away but was too slow and was overwhelmed by the aliens.");
             }
             else
             {
                 Console.Clear();
                 Console.WriteLine($"{marine.Name} fought bravely and with honor but was overcome by the aliens.");
+                Console.WriteLine("What little remains will be buried back on Earth.");
             }
-            Thread.Sleep(8000);
+            Thread.Sleep(6000);
             Environment.Exit(0);
         }
 

@@ -44,6 +44,8 @@ namespace TextAdventureGame
 
                         default:
                             Console.WriteLine("Try again.");
+                            Thread.Sleep(3000);
+                            Console.Clear();
                             break;
                     }
                 } while (!cont);
@@ -104,7 +106,7 @@ namespace TextAdventureGame
             {
                 marine.Health -= attack;
                 Console.WriteLine($"You sustained {attack} damage!");
-                Thread.Sleep(8000);
+                Thread.Sleep(4000);
             }
 
             return marine;
