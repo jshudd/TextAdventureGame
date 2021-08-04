@@ -98,6 +98,8 @@ namespace TextAdventureGame
 
             GamePlay.MarineRanSurvived(marine, alien);
 
+            marine.RanAway = false;
+
             return marine;
         }
 
