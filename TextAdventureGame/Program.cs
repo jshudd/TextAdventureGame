@@ -32,14 +32,14 @@ namespace TextAdventureGame
 
                     marine = Combat.Battle(marine, alien);
 
-                    if(!marine.StillAlive)
+                    if (!marine.StillAlive)
                     {
                         break;
                     }
 
-                } while (marine.AliensToKill > 0);
+                } while (marine.AliensToKill > 0 && marine.StillAlive);
 
-            } while (marine.StillAlive);
+            } while (marine.StillAlive && marine.AliensToKill > 0);
 
             //methods for survival or death
 
