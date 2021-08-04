@@ -174,6 +174,7 @@ namespace TextAdventureGame
             Console.Clear();
             Console.WriteLine((marine.RanAway) ? cowardResult : braveResult);
             Thread.Sleep(8000);
+            Environment.Exit(0);
         }
 
         public static void MarineSurvived(SpaceMarine marine)
@@ -182,6 +183,7 @@ namespace TextAdventureGame
             Console.WriteLine($"Congrats {marine.Name}! You fought hard and survived all of the aliens, including the Queen.");
             Console.WriteLine($"You've saved the day and deserve a medal. We need more Marines like you.");
             Thread.Sleep(5000);
+            Environment.Exit(0);
         }
 
         public static void MarineRanSurvived(SpaceMarine marine, Alien alien)
