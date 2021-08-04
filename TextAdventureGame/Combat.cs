@@ -58,7 +58,7 @@ namespace TextAdventureGame
             alien.Health -= attack;
 
             Console.WriteLine($"You inflicted {attack} damage!");
-            Thread.Sleep(3000);
+            Thread.Sleep(8000);
 
             return alien;
         }
@@ -73,13 +73,13 @@ namespace TextAdventureGame
             {
                 marine.Armor -= attack;
                 Console.WriteLine($"Your armor sustained {attack} damage!");
-                Thread.Sleep(3000);
+                Thread.Sleep(8000);
             }
             else
             {
                 marine.Health -= attack;
                 Console.WriteLine($"You sustained {attack} damage!");
-                Thread.Sleep(3000);
+                Thread.Sleep(8000);
             }
 
             return marine;
@@ -87,17 +87,16 @@ namespace TextAdventureGame
 
         public static SpaceMarine RunAway(SpaceMarine marine, Alien alien)
         {
-            var stillAlive = true;
             marine.RanAway = true;
 
-            stillAlive = (marine.Speed < alien.Speed) ? false : true;
+            marine.StillAlive = (marine.Speed < alien.Speed) ? false : true;
 
-            if (stillAlive == false)
+            if (marine.StillAlive == false)
             {
                 GamePlay.MarineDeath(marine);
             }
 
-            GamePlay.MarineRanSurvived(marine);
+            GamePlay.MarineRanSurvived(marine, alien);
 
             return marine;
         }
