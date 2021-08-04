@@ -41,6 +41,8 @@ namespace TextAdventureGame
 
             } while (marine.StillAlive && marine.AliensToKill > 0);
 
+            //create Queen object and run battle again
+
             //methods for survival or death
 
             GamePlay.EndGame(marine);
