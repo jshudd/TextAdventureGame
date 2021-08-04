@@ -167,12 +167,17 @@ namespace TextAdventureGame
         }
 
         public static void MarineDeath(SpaceMarine marine)
-        {
-            var cowardResult = $"We regret to inform you that {marine.Name} ran away but was too slow and was caught by the aliens.";
-            var braveResult = $"{marine.Name} fought bravely and with honor but was overcome by the aliens.";
-
-            Console.Clear();
-            Console.WriteLine((marine.RanAway) ? cowardResult : braveResult);
+        {   
+            if (marine.RanAway)
+            {
+                Console.Clear();
+                Console.WriteLine($"We regret to inform you that {marine.Name} ran away but was too slow and was caught by the aliens.");
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine($"{marine.Name} fought bravely and with honor but was overcome by the aliens.");
+            }
             Thread.Sleep(8000);
             Environment.Exit(0);
         }
