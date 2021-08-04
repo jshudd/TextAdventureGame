@@ -44,6 +44,8 @@ namespace TextAdventureGame
 
                 AlienAttack(marine, alien);
 
+                CurrentStats(marine, alien);
+
             } while (marine.Health > 0 && alien.Health > 0);
 
             return GamePlay.StillAlive(marine);
@@ -59,7 +61,7 @@ namespace TextAdventureGame
             alien.Health -= attack;
 
             Console.WriteLine($"You inflicted {attack} damage!");
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
 
             return alien;
         }
@@ -101,6 +103,17 @@ namespace TextAdventureGame
             GamePlay.MarineRanSurvived(marine);
 
             return marine;
+        }
+
+        public static void CurrentStats(SpaceMarine marine, Alien alien)
+        {
+            Console.Clear();
+            Console.WriteLine($"Your current Health: {marine.Health}");
+            Console.WriteLine($"Your current Armor: {marine.Armor}");
+            Console.WriteLine();
+            Console.WriteLine($"The {alien.Name}'s current Health: {alien.Health}");
+            Console.WriteLine();
+            Thread.Sleep(5000);
         }
     }
 }
