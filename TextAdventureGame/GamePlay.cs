@@ -11,7 +11,7 @@ namespace TextAdventureGame
             SpaceMarine marine = new SpaceMarine();
 
             Console.WriteLine("SPACE MARINE");
-            Thread.Sleep(5000);
+            Thread.Sleep(8000);
             Console.Clear();
 
             Console.WriteLine("WAKE UP SPACE MARINE!! We're under attack!!");
@@ -221,7 +221,7 @@ namespace TextAdventureGame
             {
                 Console.Clear();
                 Console.WriteLine($"You killed the {alien.Name}!!");
-                Thread.Sleep(5000);
+                Thread.Sleep(4000);
                 marine.AliensToKill--;
             }
             else
