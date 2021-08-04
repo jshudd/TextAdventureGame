@@ -136,10 +136,18 @@ namespace TextAdventureGame
             return pick;
         }
 
-        public static Alien GenerateAlien()
+        public static Alien GenerateAlien(int pick)
         {
             //Generates alien based on # generated above
-            throw new NotImplementedException();
+            Console.WriteLine("Get ready!! Scanners detecting movement!!!");
+            Thread.Sleep(5000);
+            Console.Clear();
+
+            Alien alien1 = new FaceSucker();
+            Alien alien2 = new Xenomorph();
+
+            Console.WriteLine((pick == 1) ? "Lookout it's a FaceSucker!" : "Oh no! It's a Xenomorph!");
+            return (pick == 1) ? alien1 : alien2;
         }
     }
 }

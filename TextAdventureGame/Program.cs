@@ -7,19 +7,29 @@ namespace TextAdventureGame
     {
         static void Main(string[] args)
         {
-            var marine = GamePlay.StartUp();
-            Console.Clear();
+            RandomAlienTest.Test();
 
-            marine = GamePlay.GearUpArmor(marine);
-            Console.Clear();
+            //var marine = GamePlay.StartUp();
+            //Console.Clear();
 
-            marine = GamePlay.GearUpWeapon(marine);
-            Console.Clear();
+            //marine = GamePlay.GearUpArmor(marine);
+            //Console.Clear();
 
-            //test Marine object
-            MarineStatsTest.MarineStats(marine);
+            //marine = GamePlay.GearUpWeapon(marine);
+            //Console.Clear();
 
+            ////test Marine object
+            //MarineStatsTest.MarineStats(marine);
+            //do
+            //{
+                //do
+                //{
+                //    var random = GamePlay.RandomAlien();
 
+                //    Alien alien = GamePlay.GenerateAlien(random);
+
+                //} while (marine.AliensToKill > 0);
+            //} while (marine.Health > 0);
         }
     }
 }
