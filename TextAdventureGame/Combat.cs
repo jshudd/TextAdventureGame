@@ -25,11 +25,13 @@ namespace TextAdventureGame
                     switch(response.ToLower())
                     {
                         case "run":
+                        case "r":
                             RunAway(marine, alien);
                             cont = true;
                             break;
 
                         case "attack":
+                        case "a":
                             MarineAttack(marine, alien);
                             if(alien.Health <= 0)
                             {
