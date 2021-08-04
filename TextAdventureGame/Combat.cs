@@ -31,6 +31,11 @@ namespace TextAdventureGame
 
                         case "attack":
                             MarineAttack(marine, alien);
+                            if(alien.Health <= 0)
+                            {
+                                cont = true;
+                                break;
+                            }
                             AlienAttack(marine, alien);
                             cont = true;
                             break;
@@ -51,14 +56,14 @@ namespace TextAdventureGame
         public static Alien MarineAttack(SpaceMarine marine, Alien alien)
         {
             Console.Clear();
-            Console.WriteLine("Firing {marine.CurrentWeapon}!!");
+            Console.WriteLine($"Firing {marine.CurrentWeapon}!!");
             Random rdn = new Random();
             var attack = rdn.Next(1, marine.AttackStrength + 1);
 
             alien.Health -= attack;
 
             Console.WriteLine($"You inflicted {attack} damage!");
-            Thread.Sleep(8000);
+            Thread.Sleep(4000);
 
             return alien;
         }
@@ -71,9 +76,26 @@ namespace TextAdventureGame
 
             if (marine.Armor > 0)
             {
-                marine.Armor -= attack;
-                Console.WriteLine($"Your armor sustained {attack} damage!");
-                Thread.Sleep(8000);
+                if (attack > marine.Armor)
+                {
+                    marine.Armor -= attack;
+                    var diff = marine.Armor;
+                    marine.Health -= diff;
+                    marine.Armor = 0;
+
+                    Console.Clear();
+                    Console.WriteLine($"Your armor was completely damaged and is now useless.");
+                    Console.WriteLine($"You also sustained {diff} damage!");
+                    Thread.Sleep(4000);
+                }
+                else
+                {
+                    marine.Armor -= attack;
+
+                    Console.Clear();
+                    Console.WriteLine($"Your armor sustained {attack} damage!");
+                    Thread.Sleep(4000);
+                }
             }
             else
             {
