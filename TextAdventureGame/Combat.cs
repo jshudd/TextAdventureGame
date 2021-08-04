@@ -96,7 +96,7 @@ namespace TextAdventureGame
 
             Console.WriteLine($"Your grenade inflicted {attack} damage!");
             Thread.Sleep(4000);
-
+            marine.Grenades--;
             return alien;
 
         }
@@ -164,6 +164,7 @@ namespace TextAdventureGame
             Console.Clear();
             Console.WriteLine($"Your current Health: {marine.Health}");
             Console.WriteLine($"Your current Armor: {marine.Armor}");
+            Console.WriteLine($"Number of grenades: {marine.Grenades}");
             Console.WriteLine();
             Console.WriteLine($"The {alien.Name}'s current Health: {alien.Health}");
             Console.WriteLine();
