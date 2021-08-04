@@ -8,15 +8,12 @@ namespace TextAdventureGame
         public static SpaceMarine Battle(SpaceMarine marine, Alien alien)
         {
             Console.Clear();
-            Console.WriteLine($"A {alien.Name} is attacking!!");
+            Console.WriteLine($"The {alien.Name} is attacking!!");
             do
             {
                 var cont = false;
 
-                Console.WriteLine($"Marine Health: {marine.Health}");
-                Console.WriteLine($"Marine Armor: {marine.Armor}");
-                Console.WriteLine();
-                Console.WriteLine($"{alien.Name} Health: {alien.Health}");
+                CurrentStats(marine, alien);
 
                 do
                 {
@@ -31,20 +28,18 @@ namespace TextAdventureGame
                             RunAway(marine, alien);
                             cont = true;
                             break;
+
                         case "attack":
+                            MarineAttack(marine, alien);
+                            AlienAttack(marine, alien);
                             cont = true;
                             break;
+
                         default:
                             Console.WriteLine("Try again.");
                             break;
                     }
                 } while (!cont);
-
-                MarineAttack(marine, alien);
-
-                AlienAttack(marine, alien);
-
-                CurrentStats(marine, alien);
 
             } while (marine.Health > 0 && alien.Health > 0);
 

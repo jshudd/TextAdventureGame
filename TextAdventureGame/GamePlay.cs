@@ -65,7 +65,8 @@ namespace TextAdventureGame
 
             Console.Clear();
             Console.WriteLine("Great choice. Hope it was the right one...");
-            Thread.Sleep(4000);
+            Thread.Sleep(5000);
+            Console.Clear();
             return marine;
         }
 
@@ -125,8 +126,9 @@ namespace TextAdventureGame
 
             Console.Clear();
             Console.WriteLine("You're locked and loaded.");
-            Console.WriteLine($"Move it, {marine.Name}! The Corp ain't payin you by the hour!!");
+            Console.WriteLine($"Move it, {marine.Name}! The Corp ain't payin' you by the hour!!");
             Thread.Sleep(5000);
+            Console.Clear();
 
             return marine;
         }
