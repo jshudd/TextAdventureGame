@@ -8,7 +8,7 @@ namespace TextAdventureGame
         public static SpaceMarine Battle(SpaceMarine marine, Alien alien)
         {
             Console.Clear();
-            Console.WriteLine($"The {alien.Name} is attacking!!");
+            Console.WriteLine($"Here comes the {alien.Name}!!");
             do
             {
                 var cont = false;
@@ -40,6 +40,8 @@ namespace TextAdventureGame
                             break;
                     }
                 } while (!cont);
+
+                GamePlay.AlienStillAlive(alien);
 
             } while (marine.Health > 0 && alien.Health > 0);
 

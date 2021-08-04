@@ -186,6 +186,19 @@ namespace TextAdventureGame
             Console.WriteLine($"{marine.Name} quickly retreated to a safe location. Many other marines died due to your choice, though");
         }
 
+        public static void AlienStillAlive(Alien alien)
+        {
+            Console.Clear();
+            if(alien.Health <= 0)
+            {
+                Console.WriteLine($"You killed the {alien.Name}!!");
+            }
+            else
+            {
+                Console.WriteLine($"The {alien.Name} is still alive and fighting!!");
+            }
+        }
+
         public static void EndGame(SpaceMarine marine)
         {
             if (marine.StillAlive)
