@@ -187,9 +187,10 @@ namespace TextAdventureGame
             else
             {
                 Console.Clear();
-                Console.WriteLine($"{marine.Name} fought bravely and with honor but was overcome by the aliens.");
-                Console.WriteLine("What little remains will be buried back on Earth.");
+                Console.WriteLine($"{marine.Name} fought bravely and with honor but was overcome by the aliens.");                
             }
+
+            Console.WriteLine("What little remains will be buried back on Earth.");
             Thread.Sleep(6000);
             Environment.Exit(0);
         }
