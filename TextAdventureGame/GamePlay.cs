@@ -172,6 +172,7 @@ namespace TextAdventureGame
 
             Console.Clear();
             Console.WriteLine((marine.RanAway) ? cowardResult : braveResult);
+            Thread.Sleep(8000);
         }
 
         public static void MarineSurvived(SpaceMarine marine)
@@ -179,7 +180,7 @@ namespace TextAdventureGame
             Console.Clear();
             Console.WriteLine($"Congrats {marine.Name}! You fought hard and survived all of the aliens, including the Queen.");
             Console.WriteLine($"You've saved the day and deserve a medal. We need more Marines like you.");
-            Thread.Sleep(5000);
+            Thread.Sleep(8000);
         }
 
         public static void MarineRanSurvived(SpaceMarine marine, Alien alien)
@@ -187,7 +188,7 @@ namespace TextAdventureGame
             Console.Clear();
             Console.WriteLine($"{marine.Name} quickly retreated to a safe location. Many other marines died due to your choice, though");
             Console.WriteLine($"The {alien.Name} will probably find you again soon...");
-            Thread.Sleep(5000);
+            Thread.Sleep(8000);
             Console.WriteLine($"IT FOUND YOU!!");
             Thread.Sleep(3000);
         }
@@ -197,11 +198,14 @@ namespace TextAdventureGame
             Console.Clear();
             if(alien.Health <= 0)
             {
+                Console.Clear();
                 Console.WriteLine($"You killed the {alien.Name}!!");
+                Thread.Sleep(8000);
                 marine.AliensToKill--;
             }
             else
             {
+                Console.Clear();
                 Console.WriteLine($"The {alien.Name} is still alive and fighting!!");
             }
 
