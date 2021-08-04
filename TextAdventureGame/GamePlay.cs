@@ -17,7 +17,6 @@ namespace TextAdventureGame
             Console.WriteLine("WAKE UP SPACE MARINE!! We're under attack!!");
             Console.WriteLine();
             Console.WriteLine("What's your name Marine?!");
-            Console.WriteLine();
             marine.Name = Console.ReadLine();
 
             Console.Clear();
@@ -39,6 +38,7 @@ namespace TextAdventureGame
                 Console.WriteLine("Heavy: Great protection but you're a turtle.");
                 Console.WriteLine("Enter your choice:");
                 var response = Console.ReadLine();
+                Console.WriteLine();
 
                 switch(response.ToLower())
                 {
@@ -63,6 +63,7 @@ namespace TextAdventureGame
 
             } while (!cont);
 
+            Console.Clear();
             Console.WriteLine("Great choice. Hope it was the right one...");
             Thread.Sleep(4000);
             return marine;
@@ -122,9 +123,11 @@ namespace TextAdventureGame
 
             } while (!cont);
 
+            Console.Clear();
             Console.WriteLine("You're locked and loaded.");
             Console.WriteLine($"Move it, {marine.Name}! The Corp ain't payin you by the hour!!");
             Thread.Sleep(5000);
+
             return marine;
         }
 
@@ -132,7 +135,7 @@ namespace TextAdventureGame
         {
             //generates Random number for Alien to battle
             Random randomAlien = new Random();
-            var pick = randomAlien.Next(1, 2);
+            var pick = randomAlien.Next(1, 3);
             return pick;
         }
 

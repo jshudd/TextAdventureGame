@@ -9,10 +9,12 @@
     <None Remove="Weapons\" />
     <None Remove="Aliens\" />
     <None Remove="Armor\" />
+    <None Remove="Tests\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Weapons\" />
     <Folder Include="Aliens\" />
     <Folder Include="Armor\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
 </Project>
