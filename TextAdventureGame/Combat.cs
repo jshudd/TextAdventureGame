@@ -103,6 +103,7 @@ namespace TextAdventureGame
 
         public static SpaceMarine AlienAttack(SpaceMarine marine, Alien alien)
         {
+            Console.Clear();
             Console.WriteLine($"The {alien.Name} is attacking!!");
             Thread.Sleep(3000);
             Random rdn = new Random();
@@ -116,8 +117,7 @@ namespace TextAdventureGame
                     var diff = (marine.Armor * -1);
                     marine.Health -= diff;
                     marine.Armor = 0;
-
-                    Console.Clear();
+                                        
                     Console.WriteLine($"Your armor was completely damaged and is now useless.");
                     Console.WriteLine($"You also sustained {diff} damage!");
                     Thread.Sleep(4000);
@@ -126,7 +126,6 @@ namespace TextAdventureGame
                 {
                     marine.Armor -= attack;
 
-                    Console.Clear();
                     Console.WriteLine($"Your armor sustained {attack} damage!");
                     Thread.Sleep(4000);
                 }
@@ -168,7 +167,7 @@ namespace TextAdventureGame
             Console.WriteLine();
             Console.WriteLine($"The {alien.Name}'s current Health: {alien.Health}");
             Console.WriteLine();
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
         }
     }
 }

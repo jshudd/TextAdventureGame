@@ -59,21 +59,21 @@ namespace TextAdventureGame
 
         public void LightArmor()
         {
-            Armor += 25;
+            Armor = 25;
             CurrentArmor = "Light Armor";
         }
 
         public void MedArmor()
         {
             Speed -= 25;
-            Armor += 50;
+            Armor = 50;
             CurrentArmor = "Medium Armor";
         }
 
         public void HeavyArmor()
         {
             Speed -= 50;
-            Armor += 100;
+            Armor = 100;
             CurrentArmor = "Heavy Armor";
         }
 
