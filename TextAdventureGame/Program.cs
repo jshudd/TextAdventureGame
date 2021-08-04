@@ -7,9 +7,6 @@ namespace TextAdventureGame
     {
         static void Main(string[] args)
         {
-            bool stillAlive = true;
-            bool ranAway = false;
-
             var marine = GamePlay.StartUp();
             Console.Clear();
 
@@ -33,18 +30,20 @@ namespace TextAdventureGame
 
                     Alien alien = GamePlay.GenerateAlien(random);
 
-                    stillAlive = Combat.Battle(marine, alien);
+                    marine = Combat.Battle(marine, alien);
 
-                    if(!stillAlive)
+                    if(!marine.StillAlive)
                     {
                         break;
                     }
 
                 } while (marine.AliensToKill > 0);
 
-            } while (!stillAlive);
+            } while (marine.StillAlive);
 
             //methods for survival or death
+
+            GamePlay.EndGame(marine);
 
             Environment.Exit(0);
         }

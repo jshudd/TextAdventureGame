@@ -152,5 +152,48 @@ namespace TextAdventureGame
             Console.WriteLine((pick == 1) ? "Lookout it's a FaceSucker!" : "Oh no! It's a Xenomorph!");
             return (pick == 1) ? alien1 : alien2;
         }
+
+        public static SpaceMarine StillAlive(SpaceMarine marine)
+        {
+            if(marine.Health <= 0)
+            {
+                marine.StillAlive = false;
+            }
+
+            return marine;
+        }
+
+        public static void MarineDeath(SpaceMarine marine)
+        {
+            var cowardResult = $"We regret to inform you that {marine.Name} ran away but was too slow and was caught by the aliens.";
+            var braveResult = $"{marine.Name} fought bravely and with honor but was overcome by the aliens.";
+
+            Console.Clear();
+            Console.WriteLine((marine.RanAway) ? cowardResult : braveResult);
+        }
+
+        public static void MarineSurvived(SpaceMarine marine)
+        {
+            Console.Clear();
+            Console.WriteLine($"Congrats {marine.Name}! You fought hard and survived all of the aliens, including the Queen.");
+            Console.WriteLine($"You've saved the day and deserve a medal. We need more Marines like you.");
+        }
+
+        public static void MarineRanSurvived(SpaceMarine marine)
+        {
+            Console.WriteLine($"{marine.Name} quickly retreated to a safe location. Many other marines died due to your choice, though");
+        }
+
+        public static void EndGame(SpaceMarine marine)
+        {
+            if (marine.StillAlive)
+            {
+                GamePlay.MarineSurvived(marine);
+            }
+            else
+            {
+                GamePlay.MarineDeath(marine);
+            }
+        }
     }
 }

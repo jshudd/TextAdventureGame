@@ -3,10 +3,8 @@ namespace TextAdventureGame
 {
     public static class Combat
     {
-        public static bool Battle(SpaceMarine marine, Alien alien)
+        public static SpaceMarine Battle(SpaceMarine marine, Alien alien)
         {
-            bool stillAlive = true;
-
             Console.Clear();
             Console.WriteLine($"A {alien.Name} is attacking!!");
             do
@@ -17,6 +15,7 @@ namespace TextAdventureGame
                 Console.WriteLine($"Marine Armor: {marine.Armor}");
                 Console.WriteLine();
                 Console.WriteLine($"{alien.Name} Health: {alien.Health}");
+
                 do
                 {
                     Console.WriteLine("Choose action:");
@@ -45,7 +44,7 @@ namespace TextAdventureGame
 
             } while (marine.Health > 0 && alien.Health > 0);
 
-            return stillAlive = (marine.Health > 0) ? true : false;
+            return GamePlay.StillAlive(marine);
         }
 
         public static Alien MarineAttack(SpaceMarine marine, Alien alien)
@@ -78,13 +77,21 @@ namespace TextAdventureGame
             return marine;
         }
 
-        public static bool RunAway(SpaceMarine marine, Alien alien)
+        public static SpaceMarine RunAway(SpaceMarine marine, Alien alien)
         {
-            bool stillAlive = true;
+            var stillAlive = true;
+            marine.RanAway = true;
 
-            return stillAlive = (marine.Speed < alien.Speed) ? false : true;
+            stillAlive = (marine.Speed < alien.Speed) ? false : true;
 
-            //IDEA: rather than returning a bool; 
+            if (stillAlive == false)
+            {
+                GamePlay.MarineDeath(marine);
+            }
+
+            GamePlay.MarineRanSurvived(marine);
+
+            return marine;
         }
     }
 }

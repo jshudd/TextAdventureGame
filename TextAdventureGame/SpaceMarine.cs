@@ -16,6 +16,7 @@ namespace TextAdventureGame
 
         public string Name { get; set; }
         public int Health { get; set; } = 100;
+        public bool StillAlive { get; set; } = true;
         public int AttackStrength { get; set; }
         public int Armor { get; set; }
         public int Speed { get; set; } = 100;
@@ -23,7 +24,8 @@ namespace TextAdventureGame
         public string CurrentWeapon { get; set; }
         public string CurrentArmor { get; set; }
         public int AliensToKill { get; set; } = 3;
-        public int Ammo { get; set; }        
+        public int Ammo { get; set; }
+        public bool RanAway { get; set; }
         public static List<string> WeaponList { get; set; } = new List<string>()
         {
             "Pulse Rifle",
