@@ -41,7 +41,7 @@ namespace TextAdventureGame
                     }
                 } while (!cont);
 
-                GamePlay.AlienStillAlive(alien);
+                marine = GamePlay.AlienStillAlive(marine, alien);
 
             } while (marine.Health > 0 && alien.Health > 0);
 

@@ -192,17 +192,20 @@ namespace TextAdventureGame
             Thread.Sleep(3000);
         }
 
-        public static void AlienStillAlive(Alien alien)
+        public static SpaceMarine AlienStillAlive(SpaceMarine marine, Alien alien)
         {
             Console.Clear();
             if(alien.Health <= 0)
             {
                 Console.WriteLine($"You killed the {alien.Name}!!");
+                marine.AliensToKill--;
             }
             else
             {
                 Console.WriteLine($"The {alien.Name} is still alive and fighting!!");
             }
+
+            return marine;
         }
 
         public static void EndGame(SpaceMarine marine)
