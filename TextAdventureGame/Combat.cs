@@ -18,7 +18,7 @@ namespace TextAdventureGame
                 do
                 {
                     Console.WriteLine("Choose action:");
-                    Console.WriteLine("Attack or Run");
+                    Console.WriteLine("Attack(a), Throw Grenade(g), or Run(r)");
                     Console.WriteLine();
                     var response = Console.ReadLine();
 
@@ -42,6 +42,18 @@ namespace TextAdventureGame
                             cont = true;
                             break;
 
+                        case "grenade":
+                        case "g":
+                            ThrowGrenade(marine, alien);
+                            if (alien.Health <= 0)
+                            {
+                                cont = true;
+                                break;
+                            }
+                            AlienAttack(marine, alien);
+                            cont = true;
+                            break;
+
                         default:
                             Console.WriteLine("Try again.");
                             Thread.Sleep(3000);
@@ -51,6 +63,7 @@ namespace TextAdventureGame
                 } while (!cont);
 
                 marine = GamePlay.AlienStillAlive(marine, alien);
+                Thread.Sleep(3000);
 
             } while (marine.Health > 0 && alien.Health > 0);
 
@@ -70,6 +83,22 @@ namespace TextAdventureGame
             Thread.Sleep(4000);
 
             return alien;
+        }
+
+        public static Alien ThrowGrenade(SpaceMarine marine, Alien alien)
+        {
+            Console.Clear();
+            Console.WriteLine($"Throwing Grenade!!");
+            Random rdn = new Random();
+            var attack = rdn.Next(25, 151);
+
+            alien.Health -= attack;
+
+            Console.WriteLine($"Your grenade inflicted {attack} damage!");
+            Thread.Sleep(4000);
+
+            return alien;
+
         }
 
         public static SpaceMarine AlienAttack(SpaceMarine marine, Alien alien)
