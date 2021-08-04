@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+
 namespace TextAdventureGame
 {
     public static class Combat
@@ -9,7 +11,7 @@ namespace TextAdventureGame
             Console.WriteLine($"A {alien.Name} is attacking!!");
             do
             {
-                var cont = true;
+                var cont = false;
 
                 Console.WriteLine($"Marine Health: {marine.Health}");
                 Console.WriteLine($"Marine Armor: {marine.Armor}");
@@ -27,16 +29,16 @@ namespace TextAdventureGame
                     {
                         case "run":
                             RunAway(marine, alien);
-                            cont = false;
+                            cont = true;
                             break;
                         case "attack":
-                            cont = false;
+                            cont = true;
                             break;
                         default:
                             Console.WriteLine("Try again.");
                             break;
                     }
-                } while (cont);
+                } while (!cont);
 
                 MarineAttack(marine, alien);
 
@@ -56,6 +58,9 @@ namespace TextAdventureGame
 
             alien.Health -= attack;
 
+            Console.WriteLine($"You inflicted {attack} damage!");
+            Thread.Sleep(5000);
+
             return alien;
         }
 
@@ -68,10 +73,14 @@ namespace TextAdventureGame
             if (marine.Armor > 0)
             {
                 marine.Armor -= attack;
+                Console.WriteLine($"Your armor sustained {attack} damage!");
+                Thread.Sleep(3000);
             }
             else
             {
                 marine.Health -= attack;
+                Console.WriteLine($"You sustained {attack} damage!");
+                Thread.Sleep(3000);
             }
 
             return marine;
