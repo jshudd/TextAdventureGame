@@ -152,6 +152,7 @@ namespace TextAdventureGame
             Alien alien2 = new Xenomorph();
 
             Console.WriteLine((pick == 1) ? "Lookout it's a FaceSucker!" : "Oh no! It's a Xenomorph!");
+            Thread.Sleep(5000);
             return (pick == 1) ? alien1 : alien2;
         }
 
@@ -188,7 +189,7 @@ namespace TextAdventureGame
             Console.Clear();
             Console.WriteLine($"{marine.Name} quickly retreated to a safe location. Many other marines died due to your choice, though");
             Console.WriteLine($"The {alien.Name} will probably find you again soon...");
-            Thread.Sleep(8000);
+            Thread.Sleep(5000);
             Console.WriteLine($"IT FOUND YOU!!");
             Thread.Sleep(3000);
         }
@@ -200,7 +201,7 @@ namespace TextAdventureGame
             {
                 Console.Clear();
                 Console.WriteLine($"You killed the {alien.Name}!!");
-                Thread.Sleep(8000);
+                Thread.Sleep(5000);
                 marine.AliensToKill--;
             }
             else

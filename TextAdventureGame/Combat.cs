@@ -71,6 +71,7 @@ namespace TextAdventureGame
         public static SpaceMarine AlienAttack(SpaceMarine marine, Alien alien)
         {
             Console.WriteLine($"The {alien.Name} is attacking!!");
+            Thread.Sleep(3000);
             Random rdn = new Random();
             var attack = rdn.Next(1, alien.AttackStrength + 1);
 
@@ -79,7 +80,7 @@ namespace TextAdventureGame
                 if (attack > marine.Armor)
                 {
                     marine.Armor -= attack;
-                    var diff = marine.Armor;
+                    var diff = (marine.Armor * -1);
                     marine.Health -= diff;
                     marine.Armor = 0;
 
