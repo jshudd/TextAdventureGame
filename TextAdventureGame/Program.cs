@@ -42,8 +42,15 @@ namespace TextAdventureGame
             } while (marine.StillAlive && marine.AliensToKill > 0);
 
             //create Queen object and run battle again
+            marine = GamePlay.StillAlive(marine);
 
-            //methods for survival or death
+            Console.Clear();
+            Console.WriteLine($"While there's a lull, fix your armor.");
+            marine = GamePlay.GearUpArmor(marine);
+
+            Alien queen = GamePlay.GenerateQueen();
+
+            marine = Combat.Battle(marine, queen);
 
             GamePlay.EndGame(marine);
 

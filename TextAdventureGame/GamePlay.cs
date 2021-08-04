@@ -86,7 +86,7 @@ namespace TextAdventureGame
             {
                 Console.WriteLine("Choose your Weapon.");
                 Console.WriteLine();
-                Console.WriteLine("M41A Pulse Rifle: 10mm Explosive tip caseless. Standard Light Armor Piercing Round; 99 of 'em.");
+                Console.WriteLine("M41A Pulse Rifle: 10mm Explosive tip caseless." + "\nStandard Light Armor Piercing Round; 99 of 'em.");
                 Console.WriteLine("M56 SmartGun: Beltfed, lead-slinging hate machine. Heavy though.");
                 Console.WriteLine("Shotgun: For close encounters.");
                 Console.WriteLine("M240 Flame Thrower: Smoke 'em if you've got 'em.");
@@ -167,11 +167,27 @@ namespace TextAdventureGame
             return (pick == 1) ? alien1 : alien2;
         }
 
+        public static Alien GenerateQueen()
+        {
+            //Generates Queen
+            Console.Clear();
+            Console.WriteLine("Oh no!! Scanners are detecting something BIG!!!");
+            Thread.Sleep(5000);
+            
+            Alien queen = new Queen();
+
+            Console.Clear();
+            Console.WriteLine($"That's a Queen!! We're all gonna die!!!");
+            Thread.Sleep(5000);
+            return queen;
+        }
+
         public static SpaceMarine StillAlive(SpaceMarine marine)
         {
             if(marine.Health <= 0)
             {
                 marine.StillAlive = false;
+                MarineDeath(marine);
             }
 
             return marine;
@@ -221,7 +237,7 @@ namespace TextAdventureGame
             {
                 Console.Clear();
                 Console.WriteLine($"You killed the {alien.Name}!!");
-                Thread.Sleep(4000);
+                Thread.Sleep(3000);
                 marine.AliensToKill--;
             }
             else
