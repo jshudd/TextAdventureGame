@@ -33,9 +33,11 @@ namespace TextAdventureGame
             do
             {
                 Console.WriteLine("Choose your body armor.");
+                Console.WriteLine();
                 Console.WriteLine("Light: Some protection but won't slow you down.");
                 Console.WriteLine("Medium: Better protection but makes you slower.");
                 Console.WriteLine("Heavy: Great protection but you're a turtle.");
+                Console.WriteLine();
                 Console.WriteLine("Enter your choice:");
                 var response = Console.ReadLine();
                 Console.WriteLine();
@@ -77,11 +79,13 @@ namespace TextAdventureGame
             do
             {
                 Console.WriteLine("Choose your Weapon.");
+                Console.WriteLine();
                 Console.WriteLine("M41A Pulse Rifle: 10mm Explosive tip caseless. Standard Light Armor Piercing Round; 99 of 'em.");
                 Console.WriteLine("M56 SmartGun: Beltfed, lead-slinging hate machine. Heavy though.");
                 Console.WriteLine("Shotgun: For close encounters.");
                 Console.WriteLine("M240 Flame Thrower: Smoke 'em if you've got 'em.");
                 Console.WriteLine("Pistol: Small and light. Doesn't hit as hard.");
+                Console.WriteLine();
                 var response = Console.ReadLine();
 
                 switch (response.ToLower())
@@ -144,6 +148,7 @@ namespace TextAdventureGame
         public static Alien GenerateAlien(int pick)
         {
             //Generates alien based on # generated above
+            Console.Clear();
             Console.WriteLine("Get ready!! Scanners detecting movement!!!");
             Thread.Sleep(5000);
             Console.Clear();
