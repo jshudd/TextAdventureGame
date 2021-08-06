@@ -86,10 +86,10 @@ namespace TextAdventureGame
             {
                 Console.WriteLine("Choose your Weapon.");
                 Console.WriteLine();
-                Console.WriteLine("M41A Pulse Rifle: 10mm Explosive tip caseless." + "\nStandard Light Armor Piercing Round; 99 of 'em.");
-                Console.WriteLine("M56 SmartGun: Beltfed, lead-slinging hate machine. Heavy though.");
+                Console.WriteLine("M41A Pulse Rifle (M41A): 10mm Explosive tip caseless. Standard Light Armor Piercing Round; 99 of 'em.");
+                Console.WriteLine("M56 SmartGun (M56): Beltfed, lead-slinging hate machine. Heavy though.");
                 Console.WriteLine("Shotgun: For close encounters.");
-                Console.WriteLine("M240 Flame Thrower: Smoke 'em if you've got 'em.");
+                Console.WriteLine("M240 Flame Thrower (M240): Smoke 'em if you've got 'em.");
                 Console.WriteLine("Pistol: Small and light. Doesn't hit as hard.");
                 Console.WriteLine();
                 var response = Console.ReadLine();
@@ -177,7 +177,7 @@ namespace TextAdventureGame
             Alien queen = new Queen();
 
             Console.Clear();
-            Console.WriteLine($"That's a Queen!! We're all gonna die!!!");
+            Console.WriteLine($"That's a Queen!! Game over, man! Game over!!!");
             Thread.Sleep(5000);
             return queen;
         }
@@ -236,14 +236,28 @@ namespace TextAdventureGame
             if(alien.Health <= 0)
             {
                 Console.Clear();
-                Console.WriteLine($"You killed the {alien.Name}!!");
+                switch (alien.Name)
+                {
+                    case "FaceSucker":
+                        Console.WriteLine($"You squashed the {alien.Name}!!");
+                        break;
+                    case "Xenomorph":
+                        Console.WriteLine($"The {alien.Name} has been killed. Don't get burned by the acidic blood!");
+                        break;
+                    case "Queen":
+                        Console.WriteLine($"The {alien.Name} has been destroyed. There will be no more eggs!");
+                        break;
+                    default:
+                        Console.WriteLine($"You killed the {alien.Name}!!");
+                        break;
+                }
                 Thread.Sleep(3000);
                 marine.AliensToKill--;
             }
             else
             {
                 Console.Clear();
-                Console.WriteLine($"The {alien.Name} is still alive and fighting!!");
+                Console.WriteLine($"The {alien.Name} is still alive and fighting! Look out!!");
             }
 
             return marine;
