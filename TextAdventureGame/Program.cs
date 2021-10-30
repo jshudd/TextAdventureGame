@@ -7,6 +7,9 @@ namespace TextAdventureGame
     {
         static void Main(string[] args)
         {
+            GamePlay.StartUpLogo();
+            Console.Clear();
+
             var marine = GamePlay.StartUp();
             Console.Clear();
 

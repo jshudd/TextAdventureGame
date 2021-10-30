@@ -5,14 +5,26 @@ namespace TextAdventureGame
 {
     public static class GamePlay
     {
+        public static void StartUpLogo()
+        {
+            string title = @"
+   _____                          __  ___           _          
+  / ___/____  ____ _________     /  |/  /___ ______(_)___  ___ 
+  \__ \/ __ \/ __ `/ ___/ _ \   / /|_/ / __ `/ ___/ / __ \/ _ \
+ ___/ / /_/ / /_/ / /__/  __/  / /  / / /_/ / /  / / / / /  __/
+/____/ .___/\__,_/\___/\___/  /_/  /_/\__,_/_/  /_/_/ /_/\___/ 
+    /_/                                                        
+";
+
+            Console.WriteLine(title);
+            Thread.Sleep(8000);
+            Console.Clear();
+        }
+
         public static SpaceMarine StartUp()
         {
             //Intro to game
             SpaceMarine marine = new SpaceMarine();
-
-            Console.WriteLine("SPACE MARINE");
-            Thread.Sleep(8000);
-            Console.Clear();
 
             Console.WriteLine("WAKE UP SPACE MARINE!! We're under attack!!");
             Console.WriteLine();
