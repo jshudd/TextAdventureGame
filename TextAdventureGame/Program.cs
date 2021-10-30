@@ -7,6 +7,17 @@ namespace TextAdventureGame
     {
         static void Main(string[] args)
         {
+            //Console.SetWindowSize(160, 48);
+            
+            //change console bkgnd to Black; Text to White
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Clear();
+
+            //Check OS of computer
+            OperatingSystem os = Environment.OSVersion;
+            Console.WriteLine(os);
+            
             GamePlay.StartUpLogo();
             Console.Clear();
 

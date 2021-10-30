@@ -7,17 +7,21 @@ namespace TextAdventureGame
     {
         public static void StartUpLogo()
         {
+            int leftOffSet = (Console.WindowWidth / 2);
+            int topOffSet = (int)(Console.WindowHeight / 2.75);
+            Console.SetCursorPosition(leftOffSet, topOffSet);
+            
             string title = @"
-   _____                          __  ___           _          
-  / ___/____  ____ _________     /  |/  /___ ______(_)___  ___ 
-  \__ \/ __ \/ __ `/ ___/ _ \   / /|_/ / __ `/ ___/ / __ \/ _ \
- ___/ / /_/ / /_/ / /__/  __/  / /  / / /_/ / /  / / / / /  __/
-/____/ .___/\__,_/\___/\___/  /_/  /_/\__,_/_/  /_/_/ /_/\___/ 
-    /_/                                                        
+            _____                          __  ___           _          
+           / ___/____  ____ _________     /  |/  /___ ______(_)___  ___ 
+           \__ \/ __ \/ __ `/ ___/ _ \   / /|_/ / __ `/ ___/ / __ \/ _ \
+          ___/ / /_/ / /_/ / /__/  __/  / /  / / /_/ / /  / / / / /  __/
+         /____/ .___/\__,_/\___/\___/  /_/  /_/\__,_/_/  /_/_/ /_/\___/ 
+             /_/                                                        
 ";
 
             Console.WriteLine(title);
-            Thread.Sleep(8000);
+            Thread.Sleep(10000);
             Console.Clear();
         }
 
@@ -26,9 +30,10 @@ namespace TextAdventureGame
             //Intro to game
             SpaceMarine marine = new SpaceMarine();
 
-            Console.WriteLine("WAKE UP SPACE MARINE!! We're under attack!!");
+            Console.Clear();
+            Console.WriteLine(String.Format("{0," + Console.WindowWidth / 2 + "}", "WAKE UP SPACE MARINE!! We're under attack!!"));
             Console.WriteLine();
-            Console.WriteLine("What's your name Marine?!");
+            Console.WriteLine(String.Format("{0," + Console.WindowWidth / 2 + "}", "What's your name Marine?!"));
             marine.Name = Console.ReadLine();
 
             Console.Clear();
