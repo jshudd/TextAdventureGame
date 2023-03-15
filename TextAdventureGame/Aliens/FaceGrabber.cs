@@ -1,13 +1,13 @@
 ﻿using System;
 namespace TextAdventureGame
 {
-    public class FaceSucker :Alien
+    public class FaceGrabber :Alien
     {
-        public FaceSucker()
+        public FaceGrabber()
         {
         }
 
-        public override string Name { get; set; } = "FaceSucker";
+        public override string Name { get; set; } = "FaceGrabber";
         public override int Health { get; set; } = 25;
         public override int AttackStrength { get; set; } = 25;
         public override int Speed { get; set; } = 100;
@@ -25,7 +25,7 @@ namespace TextAdventureGame
 
         public override void Death()
         {
-            Console.WriteLine("The FaceSucker has died.");
+            Console.WriteLine("The FaceGrabber has died.");
         }
     }
 }

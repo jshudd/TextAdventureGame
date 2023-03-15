@@ -176,7 +176,7 @@ namespace TextAdventureGame
             Thread.Sleep(5000);
             Console.Clear();
 
-            Alien alien1 = new FaceSucker();
+            Alien alien1 = new FaceGrabber();
             Alien alien2 = new Xenomorph();
 
             Console.WriteLine((pick == 1) ? "Lookout it's a FaceSucker!" : "Oh no! It's a Xenomorph!");
@@ -255,7 +255,7 @@ namespace TextAdventureGame
                 Console.Clear();
                 switch (alien.Name)
                 {
-                    case "FaceSucker":
+                    case "FaceGrabber":
                         Console.WriteLine($"You squashed the {alien.Name}!!");
                         break;
                     case "Xenomorph":
