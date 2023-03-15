@@ -179,7 +179,7 @@ namespace TextAdventureGame
             Alien alien1 = new FaceGrabber();
             Alien alien2 = new Xenomorph();
 
-            Console.WriteLine((pick == 1) ? "Lookout it's a FaceSucker!" : "Oh no! It's a Xenomorph!");
+            Console.WriteLine((pick == 1) ? "Lookout it's a FaceGrabber!" : "Oh no! It's a Xenomorph!");
             Thread.Sleep(5000);
             return (pick == 1) ? alien1 : alien2;
         }
